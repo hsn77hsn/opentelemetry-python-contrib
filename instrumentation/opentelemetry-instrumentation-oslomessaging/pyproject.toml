@@ -1,0 +1,20 @@
+[build-system]
+requires = ["setuptools>=61.0.0", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "opentelemetry-instrumentation-oslomessaging"
+description = "OpenTelemetry oslo.messaging instrumentation"
+readme = "README.rst"
+authors = [{ name = "OpenTelemetry Authors" }]
+license = { file = "LICENSE" }
+version = "0.1.0"
+requires-python = ">=3.8"
+dependencies = [
+    "opentelemetry-api>=1.12.0",
+    "opentelemetry-instrumentation>=0.33b0",
+    "oslo.messaging>=11.0.0",
+]
+
+[project.entry-points.opentelemetry_instrumentor]
+oslomessaging = "opentelemetry.instrumentation.oslomessaging:OsloMessagingInstrumentor"
